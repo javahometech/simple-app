@@ -14,5 +14,4 @@ stages:
     jobs:
       - job: 'Clean'
         steps:
-        - bash: echo Hello, $NAME
-        - bash: echo Hari Kammana
+        - bash: echo Hello, $FIRST_NAME
