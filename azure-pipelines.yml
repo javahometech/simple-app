@@ -14,4 +14,5 @@ stages:
     jobs:
       - job: 'Clean'
         steps:
-        - bash: echo $name
+        - bash: echo $NAME
+        - bash: echo Hari Kammana
