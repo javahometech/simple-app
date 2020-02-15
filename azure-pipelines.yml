@@ -18,4 +18,11 @@ stages:
           displayName: 'Build'
           inputs:
             mavenPomFile: 'pom.xml'
-            goals: 'clean package'
+            goals: 'clean'
+      - job: 'Package'
+        steps:
+        - task: Maven@3
+          displayName: 'Build'
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'package'
