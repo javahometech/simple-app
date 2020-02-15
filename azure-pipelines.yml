@@ -14,26 +14,10 @@ stages:
     jobs:
       - job: 'Clean'
         steps:
-        - task: Maven@3
-          displayName: 'Build'
+        - task: Bash@3
           inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'clean'
-      - job: 'Package'
-        steps:
-        - task: Maven@3
-          displayName: 'Build'
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'package'
-  - stage: 'Deploy'
-    jobs:
-      - job: 'DeployDev'
-        steps:
-          - task: Bash@3
-            inputs:
-              targetType: 'inline'
-              script: |
-                # Write your commands here
-                
-                echo 'Hello world'
+            targetType: 'inline'
+            script: |
+              # Write your commands here
+              
+              echo 'Hello world $NAME'
