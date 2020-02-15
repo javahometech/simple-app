@@ -9,9 +9,13 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: Maven@3
-  displayName: 'Build'
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean package'
+stages:
+  - stage: 'Build'
+    jobs:
+      - job: 'Clean'
+        steps:
+        - task: Maven@3
+          displayName: 'Build'
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'clean package'
