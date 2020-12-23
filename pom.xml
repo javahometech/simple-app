@@ -4,7 +4,7 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>simple-app</artifactId>
 	<packaging>war</packaging>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>simple-app</name>
 	<url>http://maven.apache.org</url>
 	
@@ -19,5 +19,16 @@
 		</dependency>
 
 	</dependencies>
-	
+<distributionManagement>
+    <repository>
+      <id>nexus</id>
+      <name>Releases</name>
+      <url>http://13.126.1.130:8081/repository/sample-release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>Snapshot</name>
+      <url>http://13.126.1.130:8081/repository/sample-snap/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
