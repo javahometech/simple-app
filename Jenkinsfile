@@ -1,16 +1,32 @@
 pipeline {
-    agent any
-    tools {
-        maven 'maven3'
+  agent any
+    tools{
+        jdk 'java'
+        maven 'maven'
     }
-    options {
-        buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
-    }
-    stages{
-        stage('Build'){
+  
+  stages {
+     stage('CleanWorkspace') {
+            steps {
+                cleanWs()
+            }
+        }       
+      stage("Code Checkout"){
+            steps {
+                script {
+                                                                
+                    sh "git clone https://github.com/mhali922/simple-app.git"
+                   
+}
+}
+}
+            stage('Build'){
             steps{
-                 sh script: 'mvn clean package'
+                script{
+                 sh "cp -rp $workspace/simple-app/* $workspace";
+                 sh "mvn clean package";
                  archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
+            }
             }
         }
         stage('Upload War To Nexus'){
@@ -29,7 +45,7 @@ pipeline {
                     ], 
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
-                    nexusUrl: '172.31.15.204:8081', 
+                    nexusUrl: '172.31.23.232:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: nexusRepoName, 
