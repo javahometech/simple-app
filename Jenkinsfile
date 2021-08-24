@@ -48,7 +48,7 @@ pipeline {
                     nexusUrl: '172.31.23.232:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'nexusRepoName', 
+                    repository: nexusRepoName, 
                     version: "${mavenPom.version}"
                     }
             }
