@@ -34,7 +34,7 @@ pipeline {
                 script{
 
                     def mavenPom = readMavenPom file: 'pom.xml'
-                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-release" : "simpleapp-release" 
+                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? 'simpleapp-release' : 'simpleapp-release'
                     nexusArtifactUploader artifacts: [
                         [
                             artifactId: 'simple-app', 
@@ -48,7 +48,7 @@ pipeline {
                     nexusUrl: '172.31.23.232:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: nexusRepoName, 
+                    repository: 'nexusRepoName', 
                     version: "${mavenPom.version}"
                     }
             }
