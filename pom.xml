@@ -23,12 +23,12 @@
     <repository>
       <id>nexusinsance</id>
       <name>release-maven</name>
-      <url>http://13.212.4.6:8081/repository/release-maven/</url>
+      <url>http://52.221.246.84:8081/repository/release-maven/</url>
     </repository>
     <snapshotRepository>
       <id>nexusinstance</id>
       <name>snapshots-maven</name>
-      <url>http://13.212.4.6:8081/repository/snapshots-maven/</url>
+      <url>http://52.221.246.84:8081/repository/snapshots-maven/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
