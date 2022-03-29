@@ -21,7 +21,7 @@
 	</dependencies>
 <distributionManagement>
     <repository>
-      <id>nexusinsance</id>
+      <id>nexusinstance</id>
       <name>release-maven</name>
       <url>http://52.221.246.84:8081/repository/release-maven/</url>
     </repository>
