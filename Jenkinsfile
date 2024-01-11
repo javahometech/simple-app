@@ -11,9 +11,6 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{
-                script{
-                    readProp = readProperties File: 'build.properties'
-                }
                 nexusArtifactUploader artifacts: [
                         [
                             artifactId: '**/target/*.war', 
