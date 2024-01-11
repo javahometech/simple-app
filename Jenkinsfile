@@ -24,7 +24,7 @@ pipeline {
                             artifactId: 'simple-app', 
                             classifier: '', 
                             file: 'target/simple-app-1.0.0.war', 
-                            type: 'war''
+                            type: 'war'
                         ]
                     ], 
                   credentialsId: 'Nexus3', 
