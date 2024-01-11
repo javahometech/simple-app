@@ -11,6 +11,9 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{
+                script{
+                    readProp = readProperties File: 'simple-app-3.0.5-.war'
+                }
                 nexusArtifactUploader artifacts: [
                         [
                             artifactId: 'simple-app', 
