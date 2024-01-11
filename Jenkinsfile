@@ -10,7 +10,7 @@ pipeline {
         stage('Build'){
             steps{
                  sh script: 'mvn clean '
-                 archiveArtifacts artifacts: '/*.war', onlyIfSuccessful: true
+                 archiveArtifacts artifacts: '**/*.sh', onlyIfSuccessful: true
 
             }
         }
