@@ -12,7 +12,7 @@ pipeline {
         stage('Upload War To Nexus'){
             steps{
                 script{
-                    readProp = readProperties File: 'simple-app.properties'
+                    readProp = readProperties File: 'build.properties'
                 }
                 nexusArtifactUploader artifacts: [
                         [
