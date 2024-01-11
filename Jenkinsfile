@@ -26,8 +26,9 @@ pipeline {
                   protocol: 'http', 
                   repository: 'testrepo', 
                   version: '1.0.0'
-                    }
+               }
             }
         }
-    }
-}
+   }
+    
+
