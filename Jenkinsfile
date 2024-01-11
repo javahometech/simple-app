@@ -23,17 +23,17 @@ pipeline {
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
-                            type: 'war'
+                            file: 'target/simple-app-1.0.0.war', 
+                            type: 'war''
                         ]
                     ], 
-                    credentialsId: 'nexus3', 
-                    groupId: 'in.javahome', 
-                    nexusUrl: '172.31.15.204:8081', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: nexusRepoName, 
-                    version: "${mavenPom.version}"
+                  credentialsId: 'Nexus3', 
+                  groupId: 'in.javahome', 
+                  nexusUrl: '65.0.73.39:8080', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'testrepo', 
+                  version: '1.0.0'
                     }
             }
         }
