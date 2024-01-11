@@ -15,17 +15,17 @@ pipeline {
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
-                            file: 'target/simple-app-1.0.0.war', 
+                            file: '', 
                             type: 'war'
                         ]
                     ], 
                   credentialsId: 'Nexus3', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '65.0.73.39:8080', 
+                  nexusUrl: '65.0.73.39:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'testrepo', 
-                  version: '1.0.0'
+                  version: '3.0.5'
                }
             }
         }
