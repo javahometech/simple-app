@@ -10,7 +10,6 @@ pipeline {
         stage('Build'){
             steps{
                  sh script: 'mvn clean '
-                 archiveArtifacts artifacts: 'simple-app/target/simple-app.war', onlyIfSuccessful: true
             }
         }
         stage('Upload War To Nexus'){
