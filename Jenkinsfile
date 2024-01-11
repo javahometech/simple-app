@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage('Build'){
             steps{
-                 sh script: 'mvn clean package'
+                 sh script: 'mvn clean '
                  archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
             }
         }
