@@ -19,7 +19,7 @@ pipeline {
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
-                            file: '', 
+                            file: '/var/lib/jenkins/workspace/first/target', 
                             type: 'war'
                         ]
                     ], 
