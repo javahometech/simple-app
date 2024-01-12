@@ -1,41 +1,38 @@
 pipeline {
     agent any
     tools {
-        maven 'maven3'
-    }
-    options {
-        buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
+        maven 'maven1'
     }
     stages{
         stage('Build'){
             steps{
-                 sh script: 'mvn clean package'
-                 archiveArtifacts artifacts: 'target/*.war', onlyIfSuccessful: true
+                 sh script: 'mvn clean'
             }
         }
         stage('Upload War To Nexus'){
             steps{
-                script{
+                 script{
 
                     def mavenPom = readMavenPom file: 'pom.xml'
                     def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-snapshot" : "simpleapp-release"
-                    nexusArtifactUploader artifacts: [
+                nexusArtifactUploader artifacts: [
                         [
                             artifactId: 'simple-app', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
+                            file: '/var/lib/jenkins/workspace/first/target', 
                             type: 'war'
                         ]
                     ], 
-                    credentialsId: 'nexus3', 
-                    groupId: 'in.javahome', 
-                    nexusUrl: '172.31.15.204:8081', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: nexusRepoName, 
-                    version: "${mavenPom.version}"
-                    }
+                  credentialsId: 'Nexus3', 
+                  groupId: 'in.javahome', 
+                  nexusUrl: '65.0.73.39:8081', 
+                  nexusVersion: 'nexus3', 
+                  protocol: 'http', 
+                  repository: 'testrepo', 
+                  version: '3.0.5'
+               }
             }
         }
-    }
+   }
 }
+
